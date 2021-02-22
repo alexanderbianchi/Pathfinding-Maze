@@ -11,17 +11,17 @@
 }
 
 .node-start {
-  background-color: darkgreen;
+  background-color: navy;
 }
 
 .node-end {
-  background-color: maroon;
+  background-color: red;
 }
 
 .wall {
   background-color: rgb(7, 7, 7);
   animation-name: wallAnimation;
-  animation-duration: 0.6s;
+  animation-duration: 0.4s;
   animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;
@@ -33,17 +33,12 @@
 @keyframes wallAnimation {
   0% {
     background-color: rgba(0, 0, 187, 0.75);
-  }
-
-  60% {
-    background-color: rgb(138, 0, 0);
-  }
-  80% {
-    background-color: rgb(0, 0, 0);
+    opacity: 0%;
   }
 
   100% {
     background-color: rgb(0, 0, 0);
+    opacity: 100%;
   }
 }
 .node-visited {

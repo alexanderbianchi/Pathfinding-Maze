@@ -307,7 +307,7 @@ const Pathfind = () => {
         setTimeout(() => {
           shortestPath(Path, startNode, endNode);
           visualizing = false;
-        }, 15 * i);
+        }, 16 * i);
       } else {
         setTimeout(() => {
           const node = Visited[i];
@@ -315,7 +315,7 @@ const Pathfind = () => {
             document.getElementById(`node-${node.x}-${node.y}`).className =
               "Node node-visited";
           }
-        }, 10 * i);
+        }, 15 * i);
       }
     }
     visualized = true;
@@ -347,7 +347,7 @@ const Pathfind = () => {
     if (!hasStart || !hasEnd || visualizing) {
       return;
     }
-    Reset();
+
     setGrid(() => Rmaze(Grid));
     visualizing = true;
     for (let i = 0; i < Grid.length; i++) {
@@ -355,9 +355,12 @@ const Pathfind = () => {
         for (let j = 0; j < Grid[i].length; j++) {
           setTimeout(() => {
             const node = Grid[i][j];
-            if (!node.isStart && !node.endNode && node.isWall) {
+            if (!node.isStart && !node.IsEnd && node.isWall) {
               document.getElementById(`node-${node.x}-${node.y}`).className =
                 "Node wall";
+            } else if (!node.isStart && !node.isEnd && !node.isWall) {
+              document.getElementById(`node-${node.x}-${node.y}`).className =
+                "Node";
             }
             if (j == Grid[i].length - 1 && i == Grid.length - 1) {
               visualizing = false;
