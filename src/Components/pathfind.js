@@ -4,24 +4,8 @@ import "./Pathfind.css";
 import dijkstra from "../Algorithms/dijkstras.js";
 import Rmaze from "../Algorithms/Prims Algorithm.js";
 
-function makeRows() {
-  let x = Math.round(window.innerHeight / 36);
-  if (x % 2 == 0) {
-    return x - 1;
-  } else {
-    return x;
-  }
-}
-function makecols() {
-  let x = Math.round(window.innerWidth / 29);
-  if (x % 2 == 0) {
-    return x - 1;
-  } else {
-    return x;
-  }
-}
-const rows = makeRows();
-const cols = makecols();
+const rows = Math.round(window.innerHeight / 34);
+const cols = Math.round(window.innerWidth / 27);
 
 let hasStart = true;
 let hasEnd = true;
@@ -369,11 +353,12 @@ const Pathfind = () => {
         }
       }, 0 * i);
     }
+    visualized = false;
   }
   return (
     <div className="container">
       <div className="header">
-        <h1>Pathfinding Visualizer</h1>
+        <h1 className="title">Pathfinding Visualizer</h1>
       </div>
       <div className="header">
         <p>
@@ -398,7 +383,6 @@ const Pathfind = () => {
           </button>
         </div>
       </div>
-
       {gridwithNode}
     </div>
   );
