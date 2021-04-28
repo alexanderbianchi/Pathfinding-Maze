@@ -13,3 +13,4 @@ CSS animations on each node disable the ability for the user to interact with it
 An older version,however live,version can be found here https://alexanderbianchi.github.io/Pathfinding-Maze/
 
 
+![alt text](https://github.com/alexanderbianchi/Python-Projects/blob/main/Pathfinding.jpg)
